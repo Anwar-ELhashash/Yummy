@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yummy Me</title>
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <!-- Animate css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- Bootstrap CSS File -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <!-- Main Css File -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+
+  <body>
+    <!-- (1)========== Start Body ========== -->
+    <div class="body position-relative d-flex text-white">
+      <!-- (1 of 1)  Start Aside Section  -->
+      <aside class="d-flex vh-100 position-fixed top-0 bottom-0">
+        <!-- Start inVisible Section -->
+        <div
+          id="inVisible"
+          class="invisible-section p-4 d-flex justify-content-between flex-column"
+        >
+          <ul class="nav flex-column">
+            <li class="nav-item animate__animated">
+              <a class="nav-link pe-0 rounded-pill active" aria-current="page" href="#search"
+                >Search</a
+              >
+            </li>
+            <li class="nav-item animate__animated">
+              <a class="nav-link pe-0 rounded-pill" href="#">Categories</a>
+            </li>
+            <li class="nav-item animate__animated">
+              <a class="nav-link pe-0 rounded-pill" href="#">Area</a>
+            </li>
+            <li class="nav-item animate__animated">
+              <a class="nav-link pe-0 rounded-pill" href="#">Ingredients</a>
+            </li>
+            <li class="nav-item animate__animated">
+              <a class="nav-link pe-0 rounded-pill" href="#contactUs">Contact Us</a>
+            </li>
+          </ul>
+
+          <div class="social">
+            <ul class="list-unstyled m-0 p-0 d-flex align-items-center gap-1">
+              <li class="icon d-flex justify-content-center align-items-center rounded-circle">
+                <i class="fa-brands fa-facebook-f"></i>
+              </li>
+              <li class="icon d-flex justify-content-center align-items-center rounded-circle">
+                <i class="fa-brands fa-x-twitter"></i>
+              </li>
+              <li class="icon d-flex justify-content-center align-items-center rounded-circle">
+                <i class="fa-solid fa-globe"></i>
+              </li>
+            </ul>
+            <p class="copyright">Copyright Â© 2019 All Rights Reserved.</p>
+          </div>
+        </div>
+        <!-- End inVisible Section -->
+
+        <!-- Start Visible Section -->
+        <div
+          id="visible"
+          class="visible-section py-4 px-2 text-black d-flex flex-column justify-content-between align-items-center"
+        >
+          <div class="img-wrapper">
+            <img class="w-100" src="assets/images/logo.png" alt="Logo" />
+          </div>
+          <button class="btn fs-1 px-0 text-black" type="button">
+            <i id="toggleIcon" class="fa-solid fa-bars"></i>
+          </button>
+          <ul class="list-unstyled p-0 m-0 d-flex flex-column gap-2">
+            <li class="icon d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-globe"></i>
+            </li>
+            <li class="icon d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-share-nodes"></i>
+            </li>
+          </ul>
+        </div>
+        <!-- End Visible Section -->
+      </aside>
+      <!-- End Aside Section  -->
+
+      <!-- (2 of 1) Start Main Section -->
+      <main class="position-relative pt-3 w-100">
+        <!-- Start Loader Section-->
+        <div
+          class="loading position-absolute top-0 start-0 end-0 vh-100 d-flex justify-content-center align-items-center d-none"
+        >
+          <div class="loader"></div>
+        </div>
+        <!-- End Loader Section-->
+
+        <!-- Start Display Section -->
+        <div class="container-fluid">
+          <div id="searchSection"></div>
+          <div id="rowData" class="row g-3 pb-5"></div>
+        </div>
+        <!-- End Display Section -->
+
+        <!-- Start Form Section -->
+        <div
+          id="contactUs"
+          class="container vh-100 d-flex justify-content-center align-items-center d-none"
+        >
+          <form class="col-8">
+            <div class="row g-4">
+              <div class="col-12 col-md-6">
+                <div class="inner">
+                  <input
+                    class="w-100"
+                    type="text"
+                    name="uName"
+                    id="uName"
+                    placeholder="Enter Your Name"
+                  />
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="inner">
+                  <input
+                    class="w-100"
+                    type="email"
+                    name="mail"
+                    id="mail"
+                    placeholder="Enter Your Mail"
+                  />
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="inner">
+                  <input
+                    class="w-100"
+                    type="tel"
+                    name="tel"
+                    id="tel"
+                    placeholder="Enter Your Phone"
+                  />
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="inner">
+                  <input
+                    class="w-100"
+                    type="number"
+                    name="age"
+                    id="age"
+                    placeholder="Enter Your Age"
+                  />
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="inner">
+                  <input
+                    class="w-100"
+                    type="password"
+                    name="pass"
+                    id="pass"
+                    placeholder="Enter Your Password"
+                  />
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="inner">
+                  <input
+                    class="w-100"
+                    type="password"
+                    name="rePass"
+                    id="rePass"
+                    placeholder="RePassword"
+                  />
+                </div>
+              </div>
+            </div>
+            <button
+              id="submitBtn"
+              type="submit"
+              class="btn btn-outline-danger d-block mt-3 mx-auto disabled"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+        <!-- End Form Section -->
+      </main>
+      <!-- End Main Section -->
+    </div>
+    <!-- ========== End Body ========== -->
+
+    <!-- ========== JS Files ========== -->
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script src="./assets/js/index.js"></script>
+  </body>
+</html>
