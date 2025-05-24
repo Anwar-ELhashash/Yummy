@@ -29,12 +29,10 @@ body {
 /* =============== Start Aside Section =============== */
 aside {
   z-index: 666;
+  background-color: var(--body-bg);
 }
 .body aside {
   transition: var(--transition-duration);
-}
-.body aside .invisible-section {
-  background-color: var(--body-bg);
 }
 .body aside .visible-section {
   background-color: var(--main-color);
@@ -94,6 +92,9 @@ main form input:focus {
   border: 1px solid #eee;
   color: #fff;
   caret-color: #fff;
+}
+.error-message {
+  font-size: 14px;
 }
 #closeBtn {
   transition: var(--transition-duration);

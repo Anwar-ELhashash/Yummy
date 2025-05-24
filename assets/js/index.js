@@ -34,6 +34,14 @@ function closeSideBar() {
   $("#toggleIcon").removeClass("fa-xmark");
 }
 
+function resetWindow() {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "instant",
+  });
+}
+
 async function getApi(api) {
   try {
     document.querySelector(".loading").classList.remove("d-none");
@@ -75,6 +83,7 @@ class Menus {
       let data = Array.from(document.querySelectorAll(".data"));
       data.forEach((ele) => {
         ele.addEventListener("click", () => {
+          resetWindow();
           menuObject = new Menus();
           menuObject.getMealDetails(ele.getAttribute("data-id"));
         });
@@ -178,6 +187,7 @@ class Menus {
       let data = Array.from(document.querySelectorAll(".data"));
       data.forEach((ele) => {
         ele.addEventListener("click", () => {
+          resetWindow();
           searchSection.innerHTML = "";
           menuObject = new Menus();
           menuObject.getMealDetails(ele.getAttribute("data-id"));
@@ -216,6 +226,7 @@ class Menus {
       let category = Array.from(document.querySelectorAll(".category"));
       category.forEach((ele) => {
         ele.addEventListener("click", () => {
+          resetWindow();
           menuObject = new Menus("filter.php?c=");
           menuObject.getMeals(ele.getAttribute("data-category"));
         });
@@ -246,6 +257,7 @@ class Menus {
       let area = Array.from(document.querySelectorAll(".area"));
       area.forEach((ele) => {
         ele.addEventListener("click", () => {
+          resetWindow();
           menuObject = new Menus("filter.php?a=");
           menuObject.getMeals(ele.getAttribute("data-country"));
         });
@@ -279,6 +291,7 @@ class Menus {
       let ingredient = Array.from(document.querySelectorAll(".ingredient"));
       ingredient.forEach((ele) => {
         ele.addEventListener("click", () => {
+          resetWindow();
           menuObject = new Menus("filter.php?i=");
           menuObject.getMeals(ele.children[1].innerHTML);
         });
@@ -374,6 +387,14 @@ function closeDetails() {
 }
 // ==================== Validation Section ====================
 function validateInput(ele, regex) {
+  ele.addEventListener("input", (e) => {
+    if (regex.test(ele.value)) {
+      $(e.target).next().addClass("d-none");
+    } else {
+      $(e.target).next().removeClass("d-none");
+    }
+  });
+
   if (regex.test(ele.value)) {
     return true;
   } else {
@@ -383,8 +404,10 @@ function validateInput(ele, regex) {
 
 function validRePass() {
   if (allInputs[4].value === allInputs[5].value) {
+    $(allInputs[5]).next().addClass("d-none");
     return true;
   } else {
+    $(allInputs[5]).next().removeClass("d-none");
     return false;
   }
 }
